@@ -5,11 +5,14 @@ const img = require('./images.js');
 const dbModels = require('../db/models.js');
 const dbConnection = require('../db/conn.js');
 
+// Variables for generating data
+const MAX_HOUSES = 100;
+
 function create() {
   const result = [];
   const houseType = ['ENTIRE HOUSE', 'ENTIRE APARTMENT', 'PRIVATE ROOM', 'SHARED ROOM'];
   const description = ['Cozy house in friendly neiborhood', 'Spacious apartment', 'Sunny, Modern room', 'Penthouse Studio', 'Perfect Weekender'];
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 0; i < MAX_HOUSES; i += 1) {
     const obj = [
       img.getImg(),
       houseType[Math.floor(Math.random() * houseType.length)],
