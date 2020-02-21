@@ -14,7 +14,6 @@ const createApp = (dbConnection) => {
   // mountRoutes(app);
 
 
-
   // maybe change to /api/morehomes/:id
   // pull model query into this file, re-do SQL query string with id parameter
   app.get('/MoreHomes', (req, res) => {
