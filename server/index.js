@@ -1,6 +1,7 @@
-require('newrelic');
+// require('newrelic');
 const appCreator = require('./app.js');
 const dbConnection = require('./db');
+
 const PORT = 3005;
 
 // eslint-disable-next-line no-console
