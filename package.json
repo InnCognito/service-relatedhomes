@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
-    "start-dev": "nodemon server/server.js",
+    "start": "node server",
+    "start-dev": "nodemon server",
     "build": "webpack -d",
     "build-dev": "webpack -d --watch",
     "test": "jest --detectOpenHandles --coverage",
@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mysql": "^2.18.1",
+    "newrelic": "^6.4.1",
     "nodemon": "^2.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
