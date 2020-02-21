@@ -6,8 +6,11 @@ var counter = 0;
 
 
 // Environment variables for generating data
-const MAX_HOUSES = 10000000; // Number of records to create
-const OUTPUT_FILE = './db/ArangoDB/data_id_headers.csv'; // Filename of the output .csv files
+const MAX_HOUSES = 10; // Number of records to create (ids are zero-indexed)
+const START_ID = 0; // id to start at when generating ids (in case you're appending data to .csv file)
+const sendHeaders = false; // Whether column headers should be sent to .csv file as first line
+const OUTPUT_FILE = 'data_id.csv'; // Filename of the output .csv file
+const APPEND_TO_FILE = false; // Whether the .csv file should append to an existing file or start a new file
 
 // Data variables
 const HOUSE_TYPE = ['ENTIRE HOUSE', 'ENTIRE APARTMENT', 'PRIVATE ROOM', 'SHARED ROOM'];
@@ -20,9 +23,8 @@ const VOTES = [0, 3500] // Number of votes minimum and maximum values
 class Writer {
 
   constructor(file) {
-    this.writer = csvWriter({ sendHeaders: true });
-    //this.writer.pipe(fs.createWriteStream(file, { flags: 'a' }));  // USE THIS TO APPEND TO EXISTING CSV
-    this.writer.pipe(fs.createWriteStream(file));
+    this.writer = csvWriter({ sendHeaders });
+    this.writer.pipe(fs.createWriteStream(file, { flags: APPEND_TO_FILE ? 'a' : 'w' }));
   }
 
   write(obj) {
@@ -38,7 +40,6 @@ class Writer {
     // Wrap it in a promise if you wish to wait for the callback.
     this.writer.end();
   }
-
 }
 
 (async () => {
@@ -46,9 +47,8 @@ class Writer {
   let t0 = new Date().getTime();
 
   for (let i = 0; i < MAX_HOUSES; i++) {
-    counter += 1;
     const res = writer.write({
-      id: counter,
+      id: counter + START_ID, // Comment out this line if ids aren't required in .csv file
       img: img.getImg(),
       house_type: HOUSE_TYPE[Math.floor(Math.random() * HOUSE_TYPE.length)],
       location: CITIES[Math.floor(Math.random() * CITIES.length)],
@@ -60,6 +60,7 @@ class Writer {
     if (res instanceof Promise) {
       await res;
     }
+    counter += 1;
   }
   let t1 = new Date().getTime() - t0;
   writer.end(counter, t1);
