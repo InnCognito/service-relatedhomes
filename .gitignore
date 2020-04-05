@@ -39,7 +39,7 @@ bower_components/
 .flooignore
 
 
-db/config.js
+db/mySQL/config.js
 package-lock.json
 .DS_Store
 *.csv
