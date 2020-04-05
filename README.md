@@ -7,11 +7,11 @@ Suggestion module for the vacation rental app that displays 12 more homes. Each 
 ## Installation
 
 Step 1: Clone the repo
-```javascript
+```
 $ git clone https://github.com/InnCognito/service-relatedhomes.git
 ```
 
-Step 2: Start the PostgreSQL service.
+Step 2: Start your local PostgreSQL service.
 
 Step 3: Generate and seed data 
 ```javascript
