@@ -14,29 +14,31 @@ $ git clone https://github.com/InnCognito/service-relatedhomes.git
 Step 2: Start your local PostgreSQL service.
 
 Step 3: Generate and seed data 
-```javascript
+```
 $ node db/dataGeneration/createData.js
 ```
-```javascript
+
+```
 $ bash db/postgreSQL/start.sh
 ```
+
 Step 4: Compile files with webpack
-```javascript
+```
 $ npm run build
 ```
 
 Step 5: Start the app
-```javascript
+```
 $ npm start
 ```
 
 Extra: To run tests
-```javascript
+```
 $ npm run test
 ```
 
 Extra: To update screenshots for tests
-```javascript
+```
 $ npm run updateTestSnapshot
 ```
 
