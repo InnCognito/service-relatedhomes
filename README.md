@@ -2,25 +2,27 @@
 
 Suggestion module for the vacation rental app that displays 12 more homes. Each component is clickable and redirects user to the main page of the clicked house. User can scroll to the left and right to see all suggestions. The app is responsive to resizing.
 
-<img width="1179" alt="modulePic" src="https://user-images.githubusercontent.com/44889384/61908350-51395880-aee4-11e9-8ea9-36ea16ac8d98.png">
+![Screenshot](img/screenshot.png)
 
 ## Installation
 
 Step 1: Clone the repo
 ```javascript
-git clone https://github.com/InnCognito/service-relatedhomes.git
+$ git clone https://github.com/InnCognito/service-relatedhomes.git
 ```
 
-Step 2: Create `config.js` file in `db` folder with your configuration
+Step 2: Start the PostgreSQL service.
 
-Step 3: Seed data 
+Step 3: Generate and seed data 
 ```javascript
-node server/createData.js
+$ node db/dataGeneration/createData.js
 ```
-
+```javascript
+$ bash db/postgreSQL/start.sh
+```
 Step 4: Compile files with webpack
 ```javascript
-$ npm run react-dev
+$ npm run build
 ```
 
 Step 5: Start the app
