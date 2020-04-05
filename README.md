@@ -8,7 +8,7 @@ Suggestion module for the vacation rental app that displays 12 more homes. Each 
 
 Step 1: Clone the repo
 ```javascript
-git clone https://github.com/hacker-home/More-homes.git
+git clone https://github.com/InnCognito/service-relatedhomes.git
 ```
 
 Step 2: Create `config.js` file in `db` folder with your configuration
@@ -40,7 +40,6 @@ $ npm run updateTestSnapshot
 
 ## Related Projects
 
-* https://github.com/hacker-home/Airbnb-photos
-* https://github.com/hacker-home/Airbnb-info
-* https://github.com/hacker-home/Airbnb-booking
-* https://github.com/hacker-home/Airbnb-reviews
+* https://github.com/InnCognito/proxy-relatedhomes
+* https://github.com/InnCognito/service-info
+* https://github.com/InnCognito/service-reviews
