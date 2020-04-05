@@ -1,3 +1,5 @@
+const BrotliPlugin = require('brotli-webpack-plugin');
+
 module.exports = {
   entry: `${__dirname}/client/src/index.jsx`,
   output: {
@@ -7,7 +9,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -25,4 +27,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [
+    new BrotliPlugin({
+      asset: '[path].br[query]',
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+  ],
 };

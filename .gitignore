@@ -24,6 +24,7 @@ coverage
 build/
 react-client/dist/bundle.js
 public/dist/bundle.js
+public/dist/bundle.js.br
 
 # Dependency directorys
 # Deployed apps should consider commenting these lines out:
