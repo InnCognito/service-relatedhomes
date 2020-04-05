@@ -24,11 +24,9 @@ class MoreHomes extends React.Component {
 
   componentDidMount(e) {
     window.addEventListener("resize", this.handleResize);
-    // TODO: modify the following lines to not use search params (just use endpoint for id)
     const search = window.location.search;
-    console.log(window.location);
     let id = new URLSearchParams(search).get('id');
-    // id = id ? id : Math.floor((Math.random() * 10000000) + 1);
+    id = id ? id : Math.floor((Math.random() * 10000000) + 1);
     axios.get(`/api/morehomes/${id}`)
       .then((response) => {
         this.setState({ data: response.data })

@@ -4,8 +4,8 @@ const { Pool } = require('pg');
 const USER = 'mytestuser';
 const DATABASE = 'more_homes';
 const HOST = 'localhost';
-const PASSWORD = 'password'
-const PORT = 5432
+const PASSWORD = 'password';
+const PORT = 5432;
 
 const pool = new Pool({
   user: USER,
@@ -20,6 +20,5 @@ pool.on('connect', () => {
 });
 
 module.exports = {
-  // pool,
   query: (text, params) => pool.query(text, params),
 };

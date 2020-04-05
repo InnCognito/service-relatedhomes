@@ -17,7 +17,7 @@ CREATE TABLE homes (
   votes           INT NOT NULL,
   PRIMARY KEY(id));
 
-CREATE INDEX homes_location_index ON homes(location);
+-- CREATE INDEX homes_location_index ON homes(location);
 
 COPY homes(img,house_type,location,description,cost_per_night,rating,votes)
 FROM '/home/cade/ghrsea07/ghrsea07-system-design-capstone/service-relatedhomes/data.csv'
