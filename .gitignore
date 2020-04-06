@@ -21,14 +21,10 @@ coverage
 .grunt
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
-build/
-react-client/dist/bundle.js
 public/dist/bundle.js
 public/dist/bundle.js.br
 
 # Dependency directorys
-# Deployed apps should consider commenting these lines out:
-# see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
 node_modules/
 bower_components/
 
@@ -38,8 +34,10 @@ bower_components/
 .floo
 .flooignore
 
-
+# Misc
 db/mySQL/config.js
 package-lock.json
 .DS_Store
+
+# Generated data
 *.csv

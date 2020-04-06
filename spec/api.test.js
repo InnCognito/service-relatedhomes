@@ -10,7 +10,7 @@ describe('Test the root path', () => {
     };
 
     const app = appCreator.createApp(mockConnection);
-    return request(app).get('/MoreHomes').then((response) => {
+    return request(app).get('/api/morehomes').then((response) => {
       expect(response.statusCode).toBe(200);
       expect(response.body).toStrictEqual([{ d: 2 }, { c: 7 }, { a: 1 }]);
     });

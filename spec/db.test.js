@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const dbModels = require('../db/models.js');
+const dbModels = require('../db/postgreSQL/models.js');
 
 const mockConnection = {};
 
